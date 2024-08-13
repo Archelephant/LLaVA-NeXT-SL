@@ -103,8 +103,7 @@ class Conversation:
                         message, images = message
                         message = "<image>" * len(images) + message
                     chat_template_messages.append({"role": role, "content": message})
-        '''
-
+        
             # print(chat_template_messages)
             return self.tokenizer.apply_chat_template(chat_template_messages, tokenize=False, add_generation_prompt=True)
             # ret = "" if self.system == "" else self.system + self.sep + "\n"
@@ -117,6 +116,7 @@ class Conversation:
             #     else:
             #         ret += role + "\n"
             # return ret
+        '''
 
         elif self.sep_style == SeparatorStyle.MPT:
             ret = self.system + self.sep
